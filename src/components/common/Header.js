@@ -2,13 +2,16 @@ import React from 'react';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import Drawer from '@material-ui/core/Drawer';
+
 import List from '@material-ui/core/List';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import ListItem from '@material-ui/core/ListItem';
+
+// Router import
+import Link from 'react-router-dom/Link';
 
 // Icon imports
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
@@ -17,6 +20,7 @@ import MenuIcon from '@material-ui/icons/Menu';
 import HomeIcon from '@material-ui/icons/Home';
 import ContactIcon from '@material-ui/icons/Contacts';
 import SchoolIcon from '@material-ui/icons/School';
+import logo from './../../images/logo.png';
 
 const drawerWidth = 240;
 
@@ -76,7 +80,8 @@ const useStyles = makeStyles(theme => ({
   },
   title: {
     flexGrow: 1
-  }
+  },
+  link: { textDecoration: 'none', color: 'black' }
 }));
 
 export default function Header() {
@@ -103,9 +108,7 @@ export default function Header() {
             className={classes.menuButton}>
             <MenuIcon />
           </IconButton>
-          <Typography align="center" variant="h6" className={classes.title}>
-            News
-          </Typography>
+          <img src={logo} className="center-logo logo" alt="" />
         </Toolbar>
       </AppBar>
       <Drawer
@@ -125,22 +128,39 @@ export default function Header() {
             )}
           </IconButton>
         </div>
-        <List>
-          {['Home', 'Contact Me', 'Certifications'].map((text, index) => (
-            <ListItem button key={index}>
+        <div
+          role="presentation"
+          onClick={toggleNavigation}
+          onKeyDown={toggleNavigation}>
+          <List>
+            <ListItem button key="0">
               <ListItemIcon>
-                {text === 'Contact Me' ? (
-                  <ContactIcon />
-                ) : text === 'Certifications' ? (
-                  <SchoolIcon />
-                ) : (
-                  <HomeIcon />
-                )}
+                <HomeIcon />
               </ListItemIcon>
-              <ListItemText primary={text} />
+              <Link to="/" className={classes.link}>
+                <ListItemText primary="Home" />
+              </Link>
             </ListItem>
-          ))}
-        </List>
+
+            <ListItem button key="1">
+              <ListItemIcon>
+                <SchoolIcon />
+              </ListItemIcon>
+              <Link to="/certification" className={classes.link}>
+                <ListItemText primary="Certifications" />
+              </Link>
+            </ListItem>
+
+            <ListItem button key="1">
+              <ListItemIcon>
+                <ContactIcon />
+              </ListItemIcon>
+              <Link to="/contact" className={classes.link}>
+                <ListItemText primary="Contact Me" />
+              </Link>
+            </ListItem>
+          </List>
+        </div>
       </Drawer>
     </header>
   );
