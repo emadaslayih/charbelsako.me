@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import Header from './components/common/Header';
 import Footer from './components/common/Footer';
 import CertificationList from './components/CertificationList';
-import Home from './components/CertificationList';
+import Home from './components/Home';
 import Contact from './components/CertificationList';
 
 import { BrowserRouter, Route } from 'react-router-dom';
