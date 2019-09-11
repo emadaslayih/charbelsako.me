@@ -7,16 +7,8 @@ import CardContent from '@material-ui/core/CardContent';
 import CardActions from '@material-ui/core/CardActions';
 import CardActionArea from '@material-ui/core/CardActionArea';
 import CardMedia from '@material-ui/core/CardMedia';
-import { Button } from '@material-ui/core';
-
-const styles = {
-  container: { marginTop: 70, textAlign: 'center' },
-  card: { margin: 20, padding: 20 },
-  // needs to be reused
-  link: { color: 'white', textDecoration: 'none' },
-  center: { justifyContent: 'center' },
-  media: { height: 140 }
-};
+import Button from '@material-ui/core/Button';
+import styles from './styles';
 
 class Certification extends Component {
   render() {
@@ -28,7 +20,7 @@ class Certification extends Component {
     }
 
     return (
-      <Container maxWidth="md" style={styles.container}>
+      <Container maxWidth="md" style={styles.content}>
         <Card style={styles.card}>
           <CardActionArea>
             <CardMedia style={styles.media} image={image} title={title} />
@@ -43,15 +35,6 @@ class Certification extends Component {
                 View Certificate Page
               </a>
             </Button>
-            {/* <Button color="primary" variant="contained">
-              View Code
-            </Button> */}
-            {/* <Button
-              color="primary"
-              variant="contained"
-              style={{ marginLeft: 'auto' }}>
-              View Live
-            </Button> */}
           </CardActions>
         </Card>
       </Container>
