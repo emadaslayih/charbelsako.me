@@ -3,19 +3,21 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import Typography from '@material-ui/core/Typography';
+import Container from '@material-ui/core/Container';
 
 function SkillList(props) {
   return (
-    <div>
-      {props.skills.map(skill => (
+    <Container maxWidth="md">
+      <Typography variant="h4">Skills</Typography>
+      {props.skillList.map(skill => (
         <Typography variant="body2">{skill}</Typography>
       ))}
-    </div>
+    </Container>
   );
 }
 
 const mapStateToProps = state => ({
-  skills: state.skills
+  skillList: state.skillList
 });
 
 export default connect(mapStateToProps)(SkillList);
