@@ -1,7 +1,7 @@
 import { createStore } from 'redux';
 
 const initialState = {
-  projects: [
+  projectList: [
     {
       title: 'Dev Connector',
       description: `A website that allows developers to communicate with
@@ -18,7 +18,7 @@ const initialState = {
     }
     // { title: 'title1', description: 'desc' }
   ],
-  skills: [
+  skillList: [
     'PHP',
     'JS (React)',
     'HTML/CSS',
@@ -26,10 +26,11 @@ const initialState = {
     'MongoDB',
     'React Native'
   ],
-  courses: [
+  courseList: [
+    { title: 'react front to back', description: 'this is a description' },
     { title: 'react front to back', description: 'this is a description' }
   ],
-  certifications: [
+  certificationList: [
     {
       title: 'Intro to computer science',
       from: 'HarvardX',
