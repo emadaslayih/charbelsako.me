@@ -1,6 +1,16 @@
-import { combineReducers } from 'react-redux';
-import menuReducer from './menuReducer';
+import { combineReducers } from 'redux';
+import menu from './menuReducer';
+import projects from './projectReducer';
+import skills from './skillReducer';
+import certifications from './certificationReducer';
+import experience from './experienceReducer';
 
-const rootReducer = combineReducers(menuReducer);
+const rootReducer = combineReducers({
+  menu,
+  projects,
+  skills,
+  certifications,
+  experience
+});
 
 export default rootReducer;

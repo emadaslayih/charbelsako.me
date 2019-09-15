@@ -11,7 +11,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import ListItem from '@material-ui/core/ListItem';
 
 // Router import
-import Link from 'react-router-dom/Link';
+import { Link } from 'react-router-dom';
 
 // Icon imports
 import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
@@ -20,7 +20,12 @@ import MenuIcon from '@material-ui/icons/Menu';
 import HomeIcon from '@material-ui/icons/Home';
 import ContactIcon from '@material-ui/icons/Contacts';
 import SchoolIcon from '@material-ui/icons/School';
+
 import logo from './../../images/logo.png';
+
+import { OPEN_MENU, CLOSE_MENU } from '../../actions';
+
+import { connect } from 'react-redux';
 
 const drawerWidth = 240;
 
@@ -84,16 +89,16 @@ const useStyles = makeStyles(theme => ({
   link: { textDecoration: 'none', color: 'black' }
 }));
 
-export default function Header() {
+function Header(props) {
   const classes = useStyles();
   const theme = useTheme();
-  const [open, setOpen] = React.useState(false);
+  // const [open, setOpen] = React.useState(false);
 
   function toggleNavigation() {
-    if (open) {
-      setOpen(false);
+    if (props.open) {
+      props.dispatch({ type: CLOSE_MENU, payload: { open: false } });
     } else {
-      setOpen(true);
+      props.dispatch({ type: OPEN_MENU, payload: { open: true } });
     }
   }
 
@@ -114,7 +119,7 @@ export default function Header() {
       <Drawer
         variant="temporary"
         anchor="left"
-        open={open}
+        open={props.open}
         className={classes.drawer}
         classes={{
           paper: classes.drawerPaper
@@ -133,35 +138,41 @@ export default function Header() {
           onClick={toggleNavigation}
           onKeyDown={toggleNavigation}>
           <List>
-            <ListItem button key="0">
-              <ListItemIcon>
-                <HomeIcon />
-              </ListItemIcon>
-              <Link to="/" className={classes.link}>
+            <Link to="/" className={classes.link}>
+              <ListItem button key="0">
+                <ListItemIcon>
+                  <HomeIcon />
+                </ListItemIcon>
                 <ListItemText primary="Home" />
-              </Link>
-            </ListItem>
+              </ListItem>
+            </Link>
 
-            <ListItem button key="1">
-              <ListItemIcon>
-                <SchoolIcon />
-              </ListItemIcon>
-              <Link to="/certification" className={classes.link}>
+            <Link to="/certification" className={classes.link}>
+              <ListItem button key="1">
+                <ListItemIcon>
+                  <SchoolIcon />
+                </ListItemIcon>
                 <ListItemText primary="Certifications" />
-              </Link>
-            </ListItem>
+              </ListItem>
+            </Link>
 
-            <ListItem button key="1">
-              <ListItemIcon>
-                <ContactIcon />
-              </ListItemIcon>
-              <Link to="/contact" className={classes.link}>
+            <Link to="/contact" className={classes.link}>
+              <ListItem button key="1">
+                <ListItemIcon>
+                  <ContactIcon />
+                </ListItemIcon>
                 <ListItemText primary="Contact Me" />
-              </Link>
-            </ListItem>
+              </ListItem>
+            </Link>
           </List>
         </div>
       </Drawer>
     </header>
   );
 }
+
+const mapStateToProps = state => ({
+  open: state.menu.open
+});
+
+export default connect(mapStateToProps)(Header);

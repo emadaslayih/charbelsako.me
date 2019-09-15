@@ -19,7 +19,7 @@ class CertificationList extends Component {
 }
 
 const mapStateToProps = state => ({
-  certs: state.certifications
+  certs: state.certifications.certificationList
 });
 
 export default connect(mapStateToProps)(CertificationList);

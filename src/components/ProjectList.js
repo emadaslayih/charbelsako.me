@@ -9,8 +9,8 @@ class ProjectList extends Component {
     return (
       <div>
         <Typography variant="h4">My Projects</Typography>
-        {this.props.projectList.map(project => (
-          <Project data={project} />
+        {this.props.projectList.map((project, index) => (
+          <Project data={project} key={index} />
         ))}
       </div>
     );
@@ -18,7 +18,7 @@ class ProjectList extends Component {
 }
 
 const mapStateToProps = state => ({
-  projectList: state.projectList
+  projectList: state.projects.projectList
 });
 
 export default connect(mapStateToProps)(ProjectList);
