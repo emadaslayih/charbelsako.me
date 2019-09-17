@@ -1,33 +1,31 @@
-import React from 'react';
-import { makeStyles, useTheme } from '@material-ui/core/styles';
-import AppBar from '@material-ui/core/AppBar';
-import Toolbar from '@material-ui/core/Toolbar';
-import IconButton from '@material-ui/core/IconButton';
-import Drawer from '@material-ui/core/Drawer';
+import React from 'react'
+import { makeStyles, useTheme } from '@material-ui/core/styles'
+import AppBar from '@material-ui/core/AppBar'
+import Toolbar from '@material-ui/core/Toolbar'
+import IconButton from '@material-ui/core/IconButton'
+import Drawer from '@material-ui/core/Drawer'
 
-import List from '@material-ui/core/List';
-import ListItemIcon from '@material-ui/core/ListItemIcon';
-import ListItemText from '@material-ui/core/ListItemText';
-import ListItem from '@material-ui/core/ListItem';
+import List from '@material-ui/core/List'
+import ListItemIcon from '@material-ui/core/ListItemIcon'
+import ListItemText from '@material-ui/core/ListItemText'
+import ListItem from '@material-ui/core/ListItem'
 
 // Router import
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
 // Icon imports
-import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
-import ChevronRightIcon from '@material-ui/icons/ChevronRight';
-import MenuIcon from '@material-ui/icons/Menu';
-import HomeIcon from '@material-ui/icons/Home';
-import ContactIcon from '@material-ui/icons/Contacts';
-import SchoolIcon from '@material-ui/icons/School';
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft'
+import ChevronRightIcon from '@material-ui/icons/ChevronRight'
+import MenuIcon from '@material-ui/icons/Menu'
+import HomeIcon from '@material-ui/icons/Home'
+import ContactIcon from '@material-ui/icons/Contacts'
+import SchoolIcon from '@material-ui/icons/School'
+import logo from './../../images/logo.png'
 
-import logo from './../../images/logo.png';
+import { OPEN_MENU, CLOSE_MENU } from '../../actions'
+import { connect } from 'react-redux'
 
-import { OPEN_MENU, CLOSE_MENU } from '../../actions';
-
-import { connect } from 'react-redux';
-
-const drawerWidth = 240;
+const drawerWidth = 240
 
 const useStyles = makeStyles(theme => ({
   hide: {
@@ -87,18 +85,18 @@ const useStyles = makeStyles(theme => ({
     flexGrow: 1
   },
   link: { textDecoration: 'none', color: 'black' }
-}));
+}))
 
 function Header(props) {
-  const classes = useStyles();
-  const theme = useTheme();
+  const classes = useStyles()
+  const theme = useTheme()
   // const [open, setOpen] = React.useState(false);
 
   function toggleNavigation() {
     if (props.open) {
-      props.dispatch({ type: CLOSE_MENU, payload: { open: false } });
+      props.dispatch({ type: CLOSE_MENU, payload: { open: false } })
     } else {
-      props.dispatch({ type: OPEN_MENU, payload: { open: true } });
+      props.dispatch({ type: OPEN_MENU, payload: { open: true } })
     }
   }
 
@@ -168,11 +166,11 @@ function Header(props) {
         </div>
       </Drawer>
     </header>
-  );
+  )
 }
 
 const mapStateToProps = state => ({
   open: state.menu.open
-});
+})
 
-export default connect(mapStateToProps)(Header);
+export default connect(mapStateToProps)(Header)

@@ -1,17 +1,17 @@
-import React from 'react';
+import React from 'react'
 
-import store from './store';
-import { Provider } from 'react-redux';
+import store from './store'
+import { Provider } from 'react-redux'
 
-import Header from './components/common/Header';
-import Footer from './components/common/Footer';
-import CertificationList from './components/CertificationList';
-import Home from './components/Home';
-import Contact from './components/CertificationList';
+import Header from './components/common/Header'
+import Footer from './components/common/Footer'
+import CertificationList from './components/CertificationList'
+import Home from './components/Home'
+import Contact from './components/Contact'
 
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom'
 
-import './App.css';
+import './App.css'
 
 function App() {
   return (
@@ -24,7 +24,7 @@ function App() {
         <Footer />
       </Provider>
     </BrowserRouter>
-  );
+  )
 }
 
-export default App;
+export default App

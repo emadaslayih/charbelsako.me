@@ -10,9 +10,9 @@ import styles from './styles';
 export default function Home() {
   return (
     <div style={styles.content}>
+      <Experience />
       <ProjectList />
       <SkillList />
-      <Experience />
       {/* <CourseList /> */}
     </div>
   );

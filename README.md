@@ -1,3 +1,7 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/f3819252-af9e-42eb-93b1-8f309d964982/deploy-status)](https://app.netlify.com/sites/dreamy-mirzakhani-95e467/deploys)
+
+# Create React App template
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

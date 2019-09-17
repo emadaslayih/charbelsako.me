@@ -10,7 +10,7 @@ body {
 
 .center-logo {
   margin-right: auto;
-  margin-left: calc(50% - 50px);
+  margin-left: calc(50% - 50px - 16px);
 }
 
 .logo {
