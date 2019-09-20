@@ -27,6 +27,7 @@ function Experience(props) {
             <Typography variant="body1">
               {exp.title} <b>@ {exp.company}</b>{' '}
             </Typography>
+            <Typography variant="body2">{exp.description}</Typography>
             <Typography variant="body1" style={styles.paragraph}>
               <strong> Start date{': '}</strong>
               <Moment date={exp.startDate} format="MMMM YYYY" />

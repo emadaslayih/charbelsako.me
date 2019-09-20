@@ -1,5 +1,5 @@
-import { createStore } from 'redux';
-import rootReducer from './reducers';
+import { createStore } from 'redux'
+import rootReducer from './reducers'
 
 const initialState = {
   menu: {
@@ -63,17 +63,19 @@ const initialState = {
   experience: [
     {
       title: 'Front end developer',
+      description:
+        'I was responsible of building a highly interactive website, with a complex design.',
       company: 'Apps & Games Inc.',
       startDate: '2019-07-01',
       endDate: '2019-09-01'
     }
   ]
-};
+}
 
 const store = createStore(
   rootReducer,
   initialState,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
-);
+)
 
-export default store;
+export default store
