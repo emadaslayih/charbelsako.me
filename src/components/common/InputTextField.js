@@ -18,6 +18,7 @@ export default function InputTextField(props) {
   return (
     <TextField
       value={props.value}
+      name={props.id}
       id={props.id}
       type={props.type}
       onChange={props.onChange}
