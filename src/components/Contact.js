@@ -26,7 +26,7 @@ class Contact extends Component {
         <Typography variant="body1">
           <b> Email: </b> charbelsako@gmail.com
         </Typography>
-        <form name="Jobs" netlify>
+        <form method="POST" name="Jobs" netlify>
           <Grid container spacing={3}>
             <Grid item xs={12}>
               <InputTextField
