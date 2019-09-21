@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
+import React, { Component } from 'react'
 
-import { connect } from 'react-redux';
-import Typography from '@material-ui/core/Typography';
-import Project from './Project';
+import { connect } from 'react-redux'
+import Typography from '@material-ui/core/Typography'
+import Project from './Project'
 
 class ProjectList extends Component {
   render() {
@@ -13,12 +13,12 @@ class ProjectList extends Component {
           <Project data={project} key={index} />
         ))}
       </div>
-    );
+    )
   }
 }
 
 const mapStateToProps = state => ({
   projectList: state.projects.projectList
-});
+})
 
-export default connect(mapStateToProps)(ProjectList);
+export default connect(mapStateToProps)(ProjectList)
