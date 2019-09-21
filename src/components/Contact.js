@@ -30,11 +30,9 @@ class Contact extends Component {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({ 'form-name': 'jobs', ...this.state })
-    })
-      .then(() => alert('Success!'))
-      .catch(error => alert(error))
+    }).catch(error => alert(error))
 
-    e.preventDefault()
+    // e.preventDefault()
   }
 
   render() {
