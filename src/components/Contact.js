@@ -17,7 +17,7 @@ class Contact extends Component {
   state = {
     name: '',
     email: '',
-    jobType: '',
+    // jobType: '',
     comment: ''
   }
 
