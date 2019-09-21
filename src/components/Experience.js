@@ -22,8 +22,8 @@ function Experience(props) {
         <Typography variant="h4" paragraph>
           Work Experience
         </Typography>
-        {props.experience.map(exp => (
-          <React.Fragment>
+        {props.experience.map((exp, index) => (
+          <React.Fragment key={index}>
             <Typography variant="body1">
               {exp.title} <b>@ {exp.company}</b>{' '}
             </Typography>

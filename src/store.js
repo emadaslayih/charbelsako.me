@@ -5,14 +5,6 @@ const initialState = {
   menu: {
     open: false
   },
-  skillList: [
-    'PHP',
-    'JS (ReactJS, Redux)',
-    'HTML/CSS (Bootstrap, Material-ui)',
-    'Node.js',
-    'MongoDB',
-    'React Native'
-  ],
   certifications: {
     certificationList: [
       {
