@@ -12,7 +12,10 @@ const globalStyles = {
     padding: 20,
     color: 'white'
   },
-  listItem: { padding: 0 }
+  listItem: { padding: 0 },
+  rightIcon: {
+    marginLeft: '1rem'
+  }
 }
 
 export default globalStyles
