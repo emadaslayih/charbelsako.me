@@ -9,13 +9,13 @@ import CertificationList from './components/CertificationList'
 import Home from './components/Home'
 import Contact from './components/Contact'
 
-import { BrowserRouter, Route, Switch } from 'react-router-dom'
+import { HashRouter, Route, Switch } from 'react-router-dom'
 
 import './App.css'
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Provider store={store}>
         <Header />
         <Switch>
@@ -26,7 +26,7 @@ function App() {
         </Switch>
         <Footer />
       </Provider>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
