@@ -7,6 +7,12 @@ import Grid from '@material-ui/core/Grid'
 import Button from '@material-ui/core/Button'
 import SendIcon from '@material-ui/icons/Send'
 
+const encode = data => {
+  return Object.keys(data)
+    .map(key => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
+    .join('&')
+}
+
 class Contact extends Component {
   state = {
     name: '',
@@ -19,6 +25,18 @@ class Contact extends Component {
     this.setState({ [e.target.id]: e.target.value })
   }
 
+  handleSubmit = e => {
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({ 'form-name': 'jobs', ...this.state })
+    })
+      .then(() => alert('Success!'))
+      .catch(error => alert(error))
+
+    e.preventDefault()
+  }
+
   render() {
     return (
       <Container maxWidth="md" style={styles.content}>
@@ -27,7 +45,7 @@ class Contact extends Component {
           <b> Email: </b> charbelsako@gmail.com
         </Typography>
 
-        <form name="jobs" method="POST" data-netlify="true">
+        <form onSubmit={this.handleSubmit}>
           <Grid container spacing={3}>
             <Grid item xs={12}>
               <InputTextField
