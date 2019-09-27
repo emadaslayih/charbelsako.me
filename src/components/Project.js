@@ -48,7 +48,7 @@ function Project(props) {
             {title}
           </Typography>
           {/* Custom made carousel */}
-          <Carousel sliderInfo={sliderInfo} />
+          {/* <Carousel sliderInfo={sliderInfo} /> */}
           <Typography component="p">{description}</Typography>
         </CardContent>
         <CardActions style={styles.center}>

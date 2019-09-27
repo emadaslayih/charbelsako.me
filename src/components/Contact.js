@@ -72,6 +72,7 @@ class Contact extends Component {
                 value={this.state.comment}
                 icon="comment"
                 id="comment"
+                label="What do you need me to do?"
                 multiline={true}
                 onChange={this.handleInputChange}
               />

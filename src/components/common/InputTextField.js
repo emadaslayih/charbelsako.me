@@ -24,6 +24,7 @@ export default function InputTextField(props) {
       onChange={props.onChange}
       className={classes.margin}
       label={props.label}
+      placeholder={props.placeholder}
       multiline={props.multiline}
       rows={4}
       variant="outlined"
