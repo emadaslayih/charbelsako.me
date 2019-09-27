@@ -39,10 +39,16 @@ class Contact extends Component {
 
   render() {
     return (
-      <Container maxWidth="md" style={styles.content}>
+      <Container maxWidth="md" style={styles.mainContent}>
         <Typography variant="h4">Hire Me </Typography>
         <Typography variant="body1">
           <b> Email: </b> charbelsako@gmail.com
+        </Typography>
+        <Typography variant="body1">
+          <b>Phone:</b> 76587524
+        </Typography>
+        <Typography variant="body1" paragraph>
+          <b>Location:</b> Byblos
         </Typography>
 
         <form onSubmit={this.handleSubmit}>

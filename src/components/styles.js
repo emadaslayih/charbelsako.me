@@ -2,7 +2,8 @@ import indigo from '@material-ui/core/colors/indigo'
 
 const globalStyles = {
   link: { textDecoration: 'none', color: 'white' },
-  content: { marginTop: 70, textAlign: 'center', marginBottom: 60 },
+  content: { marginTop: 20, textAlign: 'center', marginBottom: 5 },
+  mainContent: { marginTop: 56, textAlign: 'center', marginBottom: 60 },
   card: { margin: 20, padding: 20 },
   center: { justifyContent: 'center' },
   media: { height: 140 },
