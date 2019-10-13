@@ -9,7 +9,6 @@ import Container from '@material-ui/core/Container'
 import CardContent from '@material-ui/core/CardContent'
 import CardActions from '@material-ui/core/CardActions'
 import Button from '@material-ui/core/Button'
-import Carousel from './Carousel'
 
 import { withStyles } from '@material-ui/core/styles'
 
@@ -38,7 +37,7 @@ const WebsiteButton = withStyles(theme => ({
 }))(Button)
 
 function Project(props) {
-  const { title, description, code, live, sliderInfo } = props.data
+  const { title, description, code, live } = props.data
 
   return (
     <Container maxWidth="md" style={styles.content}>

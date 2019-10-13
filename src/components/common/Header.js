@@ -22,6 +22,8 @@ import ContactIcon from '@material-ui/icons/Contacts'
 import SchoolIcon from '@material-ui/icons/School'
 import logo from './../../images/logo.png'
 
+import deepPurple from '@material-ui/core/colors/deepPurple'
+
 import { OPEN_MENU, CLOSE_MENU } from '../../actions'
 import { connect } from 'react-redux'
 
@@ -38,7 +40,8 @@ const useStyles = makeStyles(theme => ({
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.sharp,
       duration: theme.transitions.duration.leavingScreen
-    })
+    }),
+    backgroundColor: deepPurple[800]
   },
   // appBarShift: {
   //   width: `calc(100% - ${drawerWidth}px)`,

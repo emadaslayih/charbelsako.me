@@ -6,9 +6,12 @@ export default function BackgroundImage(props) {
     <Container
       style={{
         width: '100%',
+        height: '65vh',
+        overflow: 'hidden',
         padding: 0,
         margin: 0
-      }}>
+      }}
+      maxWidth="xl">
       <img
         src={props.image}
         alt=""

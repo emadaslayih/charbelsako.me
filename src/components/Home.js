@@ -5,8 +5,8 @@ import ProjectList from './ProjectList'
 import SkillList from './SkillList'
 import Experience from './Experience'
 import BackgroundImage from './BackgroundImage'
+import Slogan from './common/Slogan'
 
-import image from '../images/image1.jpeg'
 import image2 from '../images/image1.jpg'
 import image3 from '../images/image2.jpg'
 import styles from './styles'
@@ -15,8 +15,8 @@ export default function Home() {
   return (
     <div style={styles.mainContent}>
       <BackgroundImage image={image3} />
+      <Slogan onBackground={true} />
       <Experience />
-      <BackgroundImage image={image} />
       <ProjectList />
       <BackgroundImage image={image2} />
       <SkillList />
